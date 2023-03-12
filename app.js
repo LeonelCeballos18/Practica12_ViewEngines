@@ -8,20 +8,12 @@ app.use('/', function(req, res, next){
     next();
 })
 
-app.get('/', function(req, res){
+app.get('/index', function(req, res){
   res.render('index');
 })
 
-app.get('/person:id', function(req, res){
+app.get('/person/:id', function(req, res){
   res.render('person', { ID: req.params.id });
-})
-
-app.get('/', function (req, res) {
-  res.send(`<!DOCTYPE html><html lang="en"><head><link href=/assets/style.css type=text/css rel=stylesheet></head><body><h1>Hello world!</h1></body></html>`)
-})
-
-app.get('/person/:id', function (req, res) {
-  res.send('<!DOCTYPE html><html lang="en"><head></head><body><h1>Person: ' + req.params.id +'</h1></body></html>')
 })
 
 app.get('/api', function (req, res) {
